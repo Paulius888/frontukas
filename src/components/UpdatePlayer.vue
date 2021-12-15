@@ -5,16 +5,23 @@
 <input type="text" name="name" placeholder="Enter Name" v-model="player.name"/>
 <input type="text" name="surname" placeholder="Enter Surname" v-model="player.surname"/>
 <button type="button" v-on:click="updatePlayer">Update Player </button>
+<p>
+    <router-link :to="'/teams/'+this.$route.params.id+'/team/'+
+    this.$route.params.ids+'/players'"><button>Return</button></router-link>
+</p>
 </form>
+<Footer />
 </template>
 
 <script>
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import axios from 'axios'
 export default {
     name:'UpdatePlayer',
     components:{
-        Header
+        Header,
+        Footer
     },
     data(){
         return{

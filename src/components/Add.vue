@@ -5,16 +5,22 @@
 <input type="text" name="name" placeholder="Enter Name" v-model="league.name"/>
 <input type="text" name="country" placeholder="Enter Country"  v-model="league.country"/>
 <button type="button" v-on:click="addLeague">Add new League </button>
+<p>
+    <router-link to="/"><button>Return</button></router-link>
+</p>
 </form>
+<Footer />
 </template>
 
 <script>
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import axios from 'axios'
 export default {
     name:'Add',
     components:{
-        Header
+        Header,
+        Footer
     },
     data(){
         return{

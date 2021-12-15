@@ -6,16 +6,21 @@
 <input type="text" name="ranking" placeholder="Enter Ranking" v-model="team.ranking"/>
 <input type="text" name="finances" placeholder="Enter Finances"  v-model="team.finances"/>
 <button type="button" v-on:click="addTeams">Add new Team </button>
+<p>
+    <router-link :to="'/teams/'+this.$route.params.id"><button>Return</button></router-link>
+</p>
 </form>
+<Footer />
 </template>
-
 <script>
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import axios from 'axios'
 export default {
     name:'AddTeam',
     components:{
-        Header
+        Header,
+        Footer
     },
     data(){
         return{

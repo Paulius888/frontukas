@@ -22,11 +22,12 @@ body{
   margin:0;
 }
 .logo{
-    width: 320px;
-    border: 2px solid saddlebrown
+    width: 600px;
+    border: 2px solid saddlebrown;
+    max-width: 75%;
 }
 .register input, .login input, .add input{
-    width: 300px;
+    width: 320px;
     height: 40px;
     padding-left: 20px;
     display: block;
@@ -42,6 +43,7 @@ body{
     height: 40px;
     border: 1px saddlebrown;
     background: saddlebrown;
+    margin: 5px;
     color: #fff;
     cursor: pointer;
 }

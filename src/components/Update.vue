@@ -4,16 +4,22 @@
 <form class="add">
 <input type="text" name="name" placeholder="Enter Name" v-model="league.name"/>
 <button type="button" v-on:click="updateLeague">Update League </button>
+<p>
+    <router-link to="/"><button>Return</button></router-link>
+</p>
 </form>
+<Footer />
 </template>
 
 <script>
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import axios from 'axios'
 export default {
     name:'Update',
     components:{
-        Header
+        Header,
+        Footer
     },
     data(){
         return{

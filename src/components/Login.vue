@@ -6,7 +6,7 @@
         <input type="password" v-model="password" placeholder="Enter Password"/>
         <button v-on:click="login">Login</button>
         <p>
-            <router-link to="/sign-up">Sign Up</router-link>
+            <router-link to="/sign-up"><button>Go to Sign Up</button></router-link>
         </p>
     </div>
 </template>
