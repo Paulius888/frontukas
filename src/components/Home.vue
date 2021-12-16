@@ -82,7 +82,7 @@ export default {
         async loadData(){
             let user= localStorage.getItem('user-info');
         if(!user){
-            this.$router.push({name:'SignUp'})
+            this.$router.push({name:'Login'})
         }
         let result= await axios.get("https://saitynulab.azurewebsites.net/api/leagues")
         console.warn(result);
