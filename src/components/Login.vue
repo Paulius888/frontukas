@@ -26,10 +26,12 @@ export default {
             let result = await axios.post("https://saitynulab.azurewebsites.net/api/login",{
                 userName:this.userName,
                 password:this.password,
+                }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
             });
-            console.warn(result)
+            //console.warn(result)
             const token = result.data.accessToken;
-            console.log("barbinas",token)
             if(result.status==200){
                 localStorage.setItem("user-info", token)
                 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`

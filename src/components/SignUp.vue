@@ -28,10 +28,13 @@ export default{
             let result = await axios.post("https://saitynulab.azurewebsites.net/api/register",{
                 userName:this.userName,
                 password:this.password,
-                email:this.email
+                email:this.email,
+                }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
             });
 
-            console.warn(result);
+            //console.warn(result);
             if(result.status==201){
                 this.$router.push({name:'Login'})
             }

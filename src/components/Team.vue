@@ -77,7 +77,7 @@ export default {
             const token = localStorage.getItem("user-info")
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             let result= await axios.delete("https://saitynulab.azurewebsites.net/api/leagues/"+this.$route.params.id+"/teams/"+id);
-            console.warn(result)
+            //console.warn(result)
             location.reload()
             if(result.status==200){
                 this.loadData();
@@ -89,7 +89,7 @@ export default {
             this.$router.push({name:'SignUp'})
         }
         let result= await axios.get("https://saitynulab.azurewebsites.net/api/leagues/"+this.$route.params.id+"/teams")
-        console.warn(result);
+        //console.warn(result);
         this.teams=result.data;
         }
     },

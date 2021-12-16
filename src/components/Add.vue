@@ -32,7 +32,7 @@ export default {
     },
     methods:{
         async addLeague(){
-            console.warn(this.league)
+            //console.warn(this.league)
             //firmekas
             const token = localStorage.getItem("user-info")
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
@@ -40,11 +40,14 @@ export default {
             const result = await axios.post("https://saitynulab.azurewebsites.net/api/leagues",{
                 name:this.league.name,
                 country:this.league.country,
-            });   
+            }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
+            });
             if(result.status==201){
                 this.$router.push({name:'Home'})
-            }    
-            console.warn("result", result)
+            }
+            //console.warn("result", result)
         }
     },
      mounted(){

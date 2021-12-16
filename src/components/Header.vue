@@ -9,10 +9,26 @@
         <div class="navbar-links">
             <ul>
                 <li><router-link to="/">Home</router-link></li>   
-                <li><a v-on:click="logout" href="#">Logout</a></li> 
+                <li><a v-on:click="logout" href="#">Logout</a></li>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Info</a>
+                </li>
             </ul>
         </div>
     </nav>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-body">
+        <h1> This is Info window</h1>
+        <h3> Work is done by Paulius Eidimtas IFF8/7</h3>
+        <h3 >Using Vue.js </h3>
+        <h5 >All errors are handled by displaying error codes of the requests.</h5>
+        <h5 >Main pages of leagues, teams, players contain animations.</h5>
+        <h5 >Both picture at the start and navigation meniu are responsive</h5>
+    </div>
+</div>
+</div>
+</div>
 </template>
 
 <script>

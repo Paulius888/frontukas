@@ -35,10 +35,13 @@ export default {
             const token = localStorage.getItem("user-info")
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             //console.warn(this.league)
-            console.warn(this.league)
+            //console.warn(this.league)
             const result = await axios.put("https://saitynulab.azurewebsites.net/api/leagues/"+this.$route.params.id,{
                 name:this.league.name,
-                country:this.league.country
+                country:this.league.country,
+                }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
             });   
             if(result.status==200){
                 this.$router.push({name:'Home'})
@@ -53,7 +56,7 @@ export default {
         }
         const result = await axios.get('https://saitynulab.azurewebsites.net/api/leagues/'+this.$route.params.id)
         //console.warn(this.$route.params.id)
-        console.warn(result.data)
+        //console.warn(result.data)
         this.league=result.data
     }
 }

@@ -33,7 +33,7 @@ export default {
     },
     methods:{
         async addTeams(){
-            console.warn(this.team)
+            //console.warn(this.team)
             //firmekas
             const token = localStorage.getItem("user-info")
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
@@ -42,12 +42,15 @@ export default {
             +this.$route.params.id+"/teams",{
                 name:this.team.name,
                 ranking:this.team.ranking,
-                finances:this.team.finances
+                finances:this.team.finances,
+                }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
             });   
             if(result.status==201){
                 this.$router.push({name:'Team'})
             }    
-            console.warn("result", result)
+           // console.warn("result", result)
         }
     },
      mounted(){

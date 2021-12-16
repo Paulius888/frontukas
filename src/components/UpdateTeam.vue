@@ -38,12 +38,15 @@ export default {
             const token = localStorage.getItem("user-info")
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             //console.warn(this.league)
-            console.warn(this.team)
+            //console.warn(this.team)
             const result = await axios.put("https://saitynulab.azurewebsites.net/api/leagues/"+
             this.$route.params.id+"/teams/"+this.$route.params.ids,{
                 name:this.team.name,
                 ranking:this.team.ranking,
-                finances:this.team.finances
+                finances:this.team.finances,
+                }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
             });   
             if(result.status==200){
                 this.$router.push({name:'Team'})

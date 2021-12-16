@@ -69,7 +69,7 @@ export default {
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             let result= await axios.delete("https://saitynulab.azurewebsites.net/api/leagues/"+this.$route.params.id
         +"/teams/"+this.$route.params.ids+"/players/"+id);
-            console.warn(result)
+            //console.warn(result)
             location.reload()
             if(result.status==200){
                 this.loadData();
@@ -82,7 +82,7 @@ export default {
         }
         let result= await axios.get("https://saitynulab.azurewebsites.net/api/leagues/"+this.$route.params.id
         +"/teams/"+this.$route.params.ids+"/players")
-        console.warn(result);
+        //console.warn(result);
         this.players=result.data;
         }
     },

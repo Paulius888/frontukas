@@ -33,7 +33,7 @@ export default {
     },
     methods:{
         async addPlayers(){
-            console.warn(this.player)
+            //console.warn(this.player)
             //let pepe = this.$route.params.ids;
             //console.log(pepe);
             //firmekas
@@ -43,12 +43,15 @@ export default {
             const result = await axios.post("https://saitynulab.azurewebsites.net/api/leagues/"
             +this.$route.params.id+"/teams/"+this.$route.params.ids+"/players",{
                 name:this.player.name,
-                surname:this.player.surname
+                surname:this.player.surname,
+                }).catch (function (error){
+                console.log(error.toJSON());
+                alert(error);
             });   
             if(result.status==201){
                 this.$router.push({name:'Player'})
             }    
-            console.warn("result", result)
+            //console.warn("result", result)
         }
     },
      mounted(){
